@@ -25,3 +25,8 @@ note:
 Saya telah merubah beberapa bagian
 - Router
 - Server devedencies
+
+Jalan kan aplikasi dengan perintah
+```bash
+npm start
+```
