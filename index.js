@@ -15,6 +15,10 @@ const corsOptions = {
 
 const port = 4000
 app.use('/api', cors(corsOptions), userRoutes);
+
+
+
+
 app.listen(port,() => {
     console.log(`Server run in http://localhost:${port}`);
 })
