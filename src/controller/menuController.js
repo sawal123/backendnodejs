@@ -13,10 +13,10 @@ menuController.getMenu=(req, res)=>{
 
 menuController.addMenu=(req, res)=>{
     const menu = {
-        menu: req.body.menu,
-        kategori: req.body.kategori,
-        price: req.body.price
-      };
+      menu: req.body.menu,
+      kategori: req.body.kategori,
+      price: req.body.price
+    };
       const sql = 'INSERT INTO menu (menu, kategori, price) VALUES (?, ?, ?)';
       db.query(sql, [menu.menu, menu.kategori, menu.price], (err, result) => {
         if (err) {

@@ -24,27 +24,36 @@ orderController.getOrder = (req, res) => {
 };
 
 orderController.addOrder = (req, res) => {
-
   const customer = req.body.customerId;
   const items = req.body.items;
   const order = {
     customerId: customer,
     items: JSON.stringify(items), // Mengubah array items menjadi string JSON
   };
-  
-  var data = [];
-  var menu = []
-  var price = []
-  var qty = []
+  var menu = [];
+  var price = [];
+  var qty = [];
   for (const item of items) {
     var index = 0;
-     menu.push(item.menu);
+    menu.push(item.menu);
     price.push(item.price);
     qty.push(item.qty);
   }
-  console.log(menu);
-  console.log(price);
-  console.log(qty);
+  var totalOrder = 0;
+  for (const prices of price) {
+    totalOrder += prices;
+  }
+
+  for (const menus of menu) {
+    db.query("SELECT menu_id FROM menu", (err, rows) => {
+      if (err) throw err;
+      console.log("Data dari tabel: ", rows);
+      res.writeHead(200, "OK");
+      res.end(JSON.stringify(rows));
+    });
+  }
+  
+  console.log(totalQty);
 
   db.query("SELECT * FROM orders", (err, rows) => {
     if (err) throw err;
