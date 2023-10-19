@@ -32,6 +32,6 @@ npm start
 ```
 
 Gunakan Postman
--cek ipaddress
--gunanakan ip address sebagai localhost
--contoh : http://172.24.160.1:4000/api/get/order
+- cek ipaddress
+- gunanakan ip address sebagai localhost
+- contoh : http://172.24.160.1:4000/api/get/order
