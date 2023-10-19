@@ -6,7 +6,10 @@ getUser.getDataUser = (req, res) => {
     if (err) throw err;
     console.log("Data dari tabel: ", rows);
     res.writeHead(200, "OK");
-    res.end(JSON.stringify(rows));
+    // res.end(JSON.stringify(rows));
+    
   });
 };
 module.exports = getUser;
+
+
